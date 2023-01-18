@@ -1,0 +1,42 @@
+npm init -y
+npm install typescript --save-dev
+npm install @types/node --save-dev
+npx tsc --init --rootDir source --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowJs true --noImplicitAny true
+npx tsc
+npm install --save-dev ts-node nodemon
+
+ "scripts": {
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/server.js",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "run-script-os",
+    "prettier-format:win32": "prettier --config .prettierrc \"./source/**/*.ts\" --write",
+    "prettier-format:darwin:linux": "prettier --config .prettierrc 'source/**/*.ts' --write",
+    "prettier-format:default": "prettier --config .prettierrc 'source/**/*.ts' --write",
+    "prettier-watch": "run-script-os",
+    "prettier-watch:win32": "onchange \"source/**/*.ts\" -- prettier --write {{changed}}",
+    "prettier-watch:darwin:linux": "onchange 'source/**/*.ts' -- prettier --write {{changed}}",
+    "prettier-watch:default": "onchange 'source/**/*.ts' -- prettier --write {{changed}}",
+
+
+npm install --save-dev rimraf
+
+
+Scripts overview
+----------------
+npm run start:dev
+npm run build
+npm run start
+1 2 3 ; 4 5
+npx nodemon
+npx tsc
+
+1. Starts the application in development using nodemon and ts-node to do cold reloading.
+2. Builds the app at build, cleaning the folder first.
+3. Starts the app in production by first building the project with 2.
+     and then executing the compiled JavaScript at build/server.js
+4. done by 1., from nodemon.json does
+     npx ts-node ./source/server.ts
+5. compiles
+

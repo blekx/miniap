@@ -1,0 +1,30 @@
+{
+  "name": "miniap",
+  "version": "1.0.0",
+  "description": "2023-01-18 khali-way",
+  "main": "source/server.ts",
+  "scripts": {
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/server.js",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "run-script-os",
+    "prettier-format:win32": "prettier --config .prettierrc \"./source/**/*.ts\" --write",
+    "prettier-format:darwin:linux": "prettier --config .prettierrc 'source/**/*.ts' --write",
+    "prettier-format:default": "prettier --config .prettierrc 'source/**/*.ts' --write",
+    "prettier-watch": "run-script-os",
+    "prettier-watch:win32": "onchange \"source/**/*.ts\" -- prettier --write {{changed}}",
+    "prettier-watch:darwin:linux": "onchange 'source/**/*.ts' -- prettier --write {{changed}}",
+    "prettier-watch:default": "onchange 'source/**/*.ts' -- prettier --write {{changed}}",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "M",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "nodemon": "^2.0.20",
+    "rimraf": "^4.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
