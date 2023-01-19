@@ -19,8 +19,8 @@ npm install --save-dev ts-node nodemon
     "prettier-watch:darwin:linux": "onchange 'source/**/*.ts' -- prettier --write {{changed}}",
     "prettier-watch:default": "onchange 'source/**/*.ts' -- prettier --write {{changed}}",
 
-
 npm install --save-dev rimraf
+
 
 
 Scripts overview
@@ -39,4 +39,11 @@ npx tsc
 4. done by 1., from nodemon.json does
      npx ts-node ./source/server.ts
 5. compiles
+==============================
 
+
+
+npm install sequelize
+npm install mysql2
+
+write to server.ts
